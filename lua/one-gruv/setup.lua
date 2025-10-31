@@ -1,24 +1,35 @@
-
 local c =
 {
     text0 = "#bdb8ad",
     text1 = "#6c6963",
     bg0 = "#282828", --main
     bg1 = "#323232", -- slightly brighter
+    --fg0 = "#A4957A", --main
     fg0 = "#b3a690", --main
     fg1 = "#bfb5a1", -- slightly brighter
     gray = "#6f6f7b",
     black = "#000000",
     white = "#dfdfdf",
+    --red = "#FF7D84",
     red = "#ba5f5f",
+    --
     yellow = "#E5C07B",
     orange = "#D19A66",
+    --purple = "#C678DD", #6d76b5
     purple = "#b785e0",
+
+    --purple_pale = "#748DAE", -- final
     purple_pale = "#988dc2",
+
+    --blue = "#61AFEF",
+    --blue = "#6cc3f1",
     blue = "#589dca",
+
     turqoise = "#46ba88",
     blue_pale = "#83A598",
+    --green = "#98C379",
     green = "#83b95d",
+
     green_pale = "#8EC07C",
     pink_pale = "#F5CBCB",
     pink = "#D6A99D",
