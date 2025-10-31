@@ -143,12 +143,12 @@ local syntax_translation = -- translating semantics to lsp/treesitter
     ["constant.builtin"]        = { "@lsp.type.builtinConstant","@constant.builtin" },
     ["variable.builtin"]        = { "@variable.builtin" },
     ["variable.defaultLib"]     = { "@lsp.typemod.variable.defaultLibrary" },
-    ["keyword"]                 = { "@lsp.type.keyword", "@keyword" }, -- while, if, else, return, continue
+    ["keyword"]                 = { "@lsp.type.keyword", "@keyword", "@tag.html"}, -- while, if, else, return, continue
     ["keyword.modifier"]        = { "@keyword.modifier" },  -- inline, const, public,
     ["keyword.import"]          = { "@keyword.import" },    -- #include
-    ["type"]                    = { "@lsp.type.class", "@lsp.type.struct", "@lsp.type.type", "@type", "Struct", "Class" , "Type"}, -- classes, structs
+    ["type"]                    = { "@lsp.type.class", "@lsp.type.struct", "@lsp.type.type", "@type", "Struct", "Class" , "Type", "@tag.attribute.html", "@property.class.css"}, -- classes, structs
     ["type.builtin"]            = { "@lsp.type.builtin", "@type.builtin" }, -- int float char
-    ["numbers"]                 = { "@lsp.type.number", "@number", "Constant"},        -- 1, 1.0f, 0x00A
+    ["numbers"]                 = { "@lsp.type.number", "@number", "Constant", "@string.css"}, -- Numbers like 1.0 or 0x11223344 or css codes like cm, mm
     ["namespace"]               = { "@lsp.type.namespace", "@module"},      -- std::, UI::
     ["enum"]                    = { "@lsp.type.enum" },                     -- enum
     ["enum.member"]             = { "@lsp.type.enumMember" },               -- enum members
@@ -162,7 +162,7 @@ local syntax_translation = -- translating semantics to lsp/treesitter
     ["string.escape"]           = { "@string.escape" },
     ["string.special"]          = { "@string.special","@character.special"},
     ["comment"]                 = { "@lsp.type.comment", "@comment"},
-    ["brackets"]                = { "Delimiter" }
+    ["brackets"]                = { "Delimiter", "@tag.delimiter.html"} --
     -- markdown
 }
 
