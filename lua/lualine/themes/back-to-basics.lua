@@ -1,3 +1,4 @@
+--require("colors.back-to-basics")
 local c = {
   bg       = "#323232",
   fg       = "#dfdfdf",

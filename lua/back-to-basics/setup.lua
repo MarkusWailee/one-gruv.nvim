@@ -198,7 +198,7 @@ function M.Load()
     vim.cmd("highlight clear")
     vim.cmd("syntax reset")
     vim.o.background = "dark"
-    vim.g.colors_name = "one-gruv"
+    vim.g.colors_name = "back-to-basics"
     -- programming syntax
     for key, value in pairs(syntax_translation) do
         for _,v in pairs(value) do
