@@ -121,31 +121,40 @@ config.telescope =
 
 config.blink =
 {
-    ['Text'] =              config.syntax[""],
-    ['Method'] =            config.syntax["method"],
-    ['Function'] =          config.syntax["function"],
-    ['Constructor'] =       config.syntax["function"],
-    ['Field'] =             config.syntax["variable.property"],
-    ['Variable'] =          config.syntax["variable.default"],
-    ['Class'] =             config.syntax["type"],
-    ['Interface'] =         config.syntax["type"],
-    ['Module'] =            config.syntax["keyword.import"],
-    ['Property'] =          config.syntax["variable.property"],
-    ['Unit'] =              config.syntax["number"],
-    ['Value'] =             config.syntax["number"],
-    ['Enum'] =              config.syntax["enum"],
-    ['Keyword'] =           config.syntax["keyword"],
-    ['Snippet'] =           config.syntax[""],
-    ['Color'] =             config.syntax[""],
-    ['File'] =              config.syntax[""],
-    ['Reference'] =         config.syntax[""],
-    ['Folder'] =            config.syntax[""],
-    ['EnumMember'] =        config.syntax["enum.member"],
-    ['Constant'] =          config.syntax["constant"],
-    ['Struct'] =            config.syntax["type"],
-    ['Event'] =             config.syntax[""],
-    ['Operator'] =          config.syntax["operator"],
-    ['TypeParameter'] =     config.syntax[""],
+    ['BlinkCmpKindText'] =              config.syntax[""],
+    ['BlinkCmpKindMethod'] =            config.syntax["method"],
+    ['BlinkCmpKindFunction'] =          config.syntax["function"],
+    ['BlinkCmpKindConstructor'] =       config.syntax["function"],
+    ['BlinkCmpKindField'] =             config.syntax["variable.property"],
+    ['BlinkCmpKindVariable'] =          config.syntax["variable.default"],
+    ['BlinkCmpKindClass'] =             config.syntax["type"],
+    ['BlinkCmpKindInterface'] =         config.syntax["type"],
+    ['BlinkCmpKindModule'] =            config.syntax["keyword.import"],
+    ['BlinkCmpKindProperty'] =          config.syntax["variable.property"],
+    ['BlinkCmpKindUnit'] =              config.syntax["number"],
+    ['BlinkCmpKindValue'] =             config.syntax["number"],
+    ['BlinkCmpKindEnum'] =              config.syntax["enum"],
+    ['BlinkCmpKindKeyword'] =           config.syntax["keyword"],
+    ['BlinkCmpKindSnippet'] =           config.syntax[""],
+    ['BlinkCmpKindColor'] =             config.syntax[""],
+    ['BlinkCmpKindFile'] =              config.syntax[""],
+    ['BlinkCmpKindReference'] =         config.syntax[""],
+    ['BlinkCmpKindFolder'] =            config.syntax[""],
+    ['BlinkCmpKindEnumMember'] =        config.syntax["enum.member"],
+    ['BlinkCmpKindConstant'] =          config.syntax["constant"],
+    ['BlinkCmpKindStruct'] =            config.syntax["type"],
+    ['BlinkCmpKindEvent'] =             config.syntax[""],
+    ['BlinkCmpKindOperator'] =          config.syntax["operator"],
+    ['BlinkCmpKindTypeParameter'] =     config.syntax[""],
+
+    ['BlinkCmpLabelMatch'] =            {fg = c.green }, -- green matches
+    ['BlinkCmpLabel'] =                 {fg = c.text0 }, --all text
+    ['BlinkCmpMenuBorder'] =                 {fg = c.fg1}, --border
+    --['BlinkCmpMenuSelection'] =                 {fg = c.bg0, bg = c.fg0}, -- hovered text
+    ['BlinkCmpScrollBarThumb'] =                 {bg = c.text1}, -- hovered text
+
+
+
 }
 
 local syntax_translation = -- translating semantics to lsp/treesitter
@@ -204,10 +213,7 @@ function M.Load()
 
     set("Normal", {fg = c.fg0, bg = c.bg0})
 
-    vim.api.nvim_set_hl(0, "CmpItemKindFunction", { bg = "#FF0000", fg = c.red }) -- Sets background to red
-    for kind, color in pairs(config.blink) do
-        set('BlinkCmpKind' .. kind, color)
-    end
+    for k, v in pairs(config.blink) do set(k, v) end
 
 end
 
