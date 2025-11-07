@@ -44,7 +44,10 @@ config.core =
     ["FloatBorder"] = {fg = c.fg0, bg = c.bg0},
     ["Pmenu"]       = {fg = c.gray, bg = c.bg0 },
     ["PmenuSel"]    = {fg = c.bg0, bg = c.fg0 },
-    ["Identifier"]    = {fg = c.red}
+    ["Identifier"]    = {fg = c.red},
+    ["TabLineFill"] = {fg = c.text1, bg = c.bg0},
+    ["TabLine"]     = {fg = c.text0, bg = c.bg1},
+    ["TabLineSel"]  = {fg = c.white, bg = c.turqoise},
 }
 
 
